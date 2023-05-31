@@ -13,7 +13,7 @@ export default function Form() {
     e.preventDefault()
 
     const data = {
-      emailTo: ['ezeque_2008@Hotmail.com'],
+      emailTo: ['ezeque_2008@Hotmail.com', 'sellbruna@hotmail.com'],
       // emailTo: 'sellbruna@hotmail.com',
       title: 'Formulário',
       name,

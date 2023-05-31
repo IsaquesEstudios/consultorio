@@ -149,9 +149,9 @@ export default function Page() {
             COMENTÁRIO DE QUEM CONHECE
           </h3>
 
-          <div>
-            <Slide />
-          </div>
+          {/* <div> */}
+            {/* <Slide /> */}
+          {/* </div> */}
         </section>
 
         <Zap />
