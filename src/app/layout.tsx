@@ -1,8 +1,6 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Estética - Bruna",
@@ -19,7 +17,7 @@ export default function RootLayout(children: ReactNode) {
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"
         />
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,15 +25,15 @@ export default function RootLayout(children: ReactNode) {
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PXZNHFG');`,
           }}
-        /> */}
+        />
       </head>
-      <body className={inter.className}>
+      <body>
         <noscript>
-          {/* <iframe
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PXZNHFG"
             height="0"
             width="0"
-          ></iframe> */}
+          ></iframe>
         </noscript>
         {children}
       </body>
