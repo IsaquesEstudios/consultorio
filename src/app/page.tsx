@@ -150,7 +150,7 @@ export default function Page() {
           </h3>
 
           <div>
-            <Slide />
+            {/* <Slide /> */}
           </div>
         </section>
 
