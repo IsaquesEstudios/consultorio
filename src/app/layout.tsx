@@ -37,7 +37,6 @@ export default function RootLayout({
             width="0"
           ></iframe>
         </noscript>
-        console.log(children)
         {children}
       </body>
     </html>
