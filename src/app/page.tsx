@@ -10,7 +10,7 @@ import Facial from "./../img/Facial.jpg";
 import Outro from "./../img/outros.jpg";
 import Logo from "./../img/logo.jpeg";
 import Bruna from "./../img/bruna.jpeg";
-// import Slide from "@/components/slide";
+import Slide from "@/components/slide";
 import Form from "@/components/form";
 import Link from "next/link";
 import Zap from "@/components/zap";
