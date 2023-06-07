@@ -167,7 +167,7 @@ export default function Page() {
           </div>
         </section>
 
-        <Zap />
+        {/* <Zap /> */}
       </main>
     </>
   );
