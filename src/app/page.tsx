@@ -35,7 +35,7 @@ export default function Form() {
 
     const data = {
       // emailTo: ["ezeque_2008@Hotmail.com", "sellbruna@hotmail.com"],
-      emailTo: 'ezeque_2008@Hotmail.com',
+      emailTo: "ezeque_2008@Hotmail.com",
       title: "Formulário",
       name,
       phone,
@@ -59,7 +59,7 @@ export default function Form() {
           open && "hidden"
         }`}
       >
-        <div className="bg-[#FEF6F0] border-2 border-[#ad6159] p-32 rounded-md  relative">
+        <div className="bg-[#FEF6F0] border-2 border-[#ad6159] p-32 rounded-md  relative mobile:px-4 mobile:py-20">
           <GrFormClose
             size={30}
             className="absolute right-4 top-4 cursor-pointer"
@@ -68,7 +68,7 @@ export default function Form() {
             }}
           />
           <form
-            className="flex flex-col w-[400px]"
+            className="flex flex-col w-[400px] mobile:w-[280px]"
             onSubmit={HandleForm}
             id="form"
           >
@@ -98,7 +98,7 @@ export default function Form() {
 
             <button
               type="submit"
-              className="w-full bg-[#ad6159] text-white py-3 mt-8 rounded-sm"
+              className="w-full bg-[#ad6159] text-white py-3 mt-8 rounded-sm "
             >
               ENVIAR
             </button>
@@ -107,8 +107,8 @@ export default function Form() {
       </div>
 
       <main className="bg-[#ad6159] py-8 w-full ">
-        <section className="w-4/5 p-0  bg-[#fdf6f0] m-auto max-mobile:w-11/12 max-mobile:p-8">
-          <div className="grid grid-cols-2 max-mobile:grid-cols-1">
+        <section className="w-4/5 p-0  bg-[#fdf6f0] m-auto mobile:w-11/12 mobile:px-4 mobile:py-8">
+          <div className="grid grid-cols-2 mobile:grid-cols-1">
             <div>
               <Image src={Est} alt="ESTÉTICA" />
             </div>
@@ -131,7 +131,7 @@ export default function Form() {
                 onClick={() => {
                   setOpen(false);
                 }}
-                className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl max-w-[80%]"
+                className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl max-w-[80%] mobile:max-w-[100%] mobile:mt-4"
               >
                 Formulário
               </button>
@@ -143,8 +143,8 @@ export default function Form() {
           </div>
         </section>
 
-        <section className="w-4/5 py-4 px-8 bg-[#fdf6f0] m-auto max-mobile:w-11/12 min-mobile:p-2">
-          <h2 className="text-3xl font-semibold text-[#ad6159] mb-4 mt-20 max-mobile:mt-0 max-mobile:text-xl">
+        <section className="w-4/5 py-4 px-8 bg-[#fdf6f0] m-auto mobile:w-11/12 mobile:px-4 mobile:py-8">
+          <h2 className="text-3xl font-semibold text-[#ad6159] mb-4 mt-20 mobile:mt-0 mobile:text-xl">
             RECUPERE SUA AUTOESTIMA SEM A NECESSIDADE DE PROCEDIMENTOS EXTREMOS
           </h2>
 
@@ -174,7 +174,7 @@ export default function Form() {
           </p>
         </section>
 
-        <section className="grid grid-cols-3 gap-x-7 w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:grid-cols-1 max-mobile:w-11/12 max-mobile:gap-y-7">
+        <section className="grid grid-cols-3 gap-x-7 w-4/5 p-8  bg-[#fdf6f0] m-auto mobile:grid-cols-1 mobile:w-11/12 mobile:gap-y-7 mobile:px-4 mobile:py-8">
           <div>
             <div>
               <Image src={Facial} alt="Peling de diamante" />
@@ -220,7 +220,7 @@ export default function Form() {
           </div>
         </section>
 
-        <section className="w-4/5 p-8 flex items-center justify-center  bg-[#fdf6f0] m-auto max-mobile:w-11/12">
+        <section className="w-4/5 p-8 flex items-center justify-center  bg-[#fdf6f0] m-auto mobile:w-11/12 mobile:px-4 mobile:py-8">
           <button
             onClick={() => {
               setOpen(false);
@@ -231,7 +231,7 @@ export default function Form() {
           </button>
         </section>
 
-        <section className="grid grid-cols-2 gap-x-10 w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:grid-cols-1 max-mobile:w-11/12">
+        <section className="grid grid-cols-2 gap-x-10 w-4/5 p-8  bg-[#fdf6f0] m-auto mobile:grid-cols-1 mobile:w-11/12 mobile:px-4 mobile:py-8">
           <div>
             <Image src={Bruna} alt="bruna" />
           </div>
@@ -268,12 +268,12 @@ export default function Form() {
           </div>
         </section>
 
-        <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12">
+        <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto mobile:w-11/12 mobile:px-4 mobile:py-8">
           <h3 className="text-[#ad6159] text-2xl font-semibold mt-4 mb-2">
             COMENTÁRIO DE QUEM CONHECE
           </h3>
 
-          <div className="grid grid-cols-1 gap-y-10 gap-x-10 mobile:grid-cols-3">
+          <div className="grid  gap-y-10 gap-x-10 grid-cols-3 mobile:grid-cols-1">
             <div>
               <Image src={slide1} alt="comentario 1" />
             </div>
