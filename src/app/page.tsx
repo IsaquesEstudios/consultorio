@@ -35,7 +35,7 @@ export default function Form() {
 
     const data = {
       // emailTo: ["ezeque_2008@Hotmail.com", "sellbruna@hotmail.com"],
-      // emailTo: 'sellbruna@hotmail.com',
+      emailTo: 'ezeque_2008@Hotmail.com',
       title: "Formulário",
       name,
       phone,
