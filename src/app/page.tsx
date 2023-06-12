@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Est from "./../img/estética.jpeg";
 
@@ -10,9 +12,7 @@ import Facial from "./../img/Facial.jpg";
 import Outro from "./../img/outros.jpg";
 import Logo from "./../img/logo.jpeg";
 import Bruna from "./../img/bruna.jpeg";
-import Form from "@/components/form";
 import Zap from "@/components/zap";
-
 
 import slide1 from "./../img/slide/9ef5139b-ce86-4a61-b556-434fb137fc28.jpg";
 import slide2 from "./../img/slide/648a270f-3cc4-4b1a-9ec7-ac81c6b7231a.jpg";
@@ -20,11 +20,93 @@ import slide3 from "./../img/slide/d7ea91b6-c62f-4346-8420-64b82479a7ae.jpg";
 import slide4 from "./../img/slide/e5b09a39-9286-4619-93c5-aae0eca20777.jpg";
 import slide5 from "./../img/slide/e18a28c8-2beb-4035-b2f3-5fbb17ac5778.jpg";
 
-export default function Page() {
+import axios from "axios";
+import { FormEvent, useState } from "react";
+import { GrFormClose } from "react-icons/gr";
+
+export default function Form() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(true);
+
+  async function HandleForm(e: FormEvent) {
+    e.preventDefault();
+
+    const data = {
+      // emailTo: ["ezeque_2008@Hotmail.com", "sellbruna@hotmail.com"],
+      // emailTo: 'sellbruna@hotmail.com',
+      title: "Formulário",
+      name,
+      phone,
+      message,
+    };
+
+    try {
+      await axios.post("https://main-form.herokuapp.com/ticonnected", data);
+
+      window.location.assign("/obrigado");
+      setOpen(true);
+    } catch (error) {}
+  }
+
   return (
     <>
       <title>Estética - Bruna</title>
-      <main className="bg-[#FB9494] py-8 w-full ">
+
+      <div
+        className={`h-screen w-full fixed  left-0 top-0 flex justify-center items-center backdrop-blur-sm ${
+          open && "hidden"
+        }`}
+      >
+        <div className="bg-[#FEF6F0] border-2 border-[#ad6159] p-32 rounded-md  relative">
+          <GrFormClose
+            size={30}
+            className="absolute right-4 top-4 cursor-pointer"
+            onClick={() => {
+              setOpen(true);
+            }}
+          />
+          <form
+            className="flex flex-col w-[400px]"
+            onSubmit={HandleForm}
+            id="form"
+          >
+            <input
+              type="text"
+              placeholder="Nome"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              className="mb-6 border border-[#ad6159] p-2"
+            />
+            <input
+              type="text"
+              placeholder="Numero"
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+              className="mb-6 border border-[#ad6159] p-2"
+            />
+            <textarea
+              placeholder="mensagem"
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              className="h-20 border border-[#ad6159] p-2"
+            />
+
+            <button
+              type="submit"
+              className="w-full bg-[#ad6159] text-white py-3 mt-8 rounded-sm"
+            >
+              ENVIAR
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <main className="bg-[#ad6159] py-8 w-full ">
         <section className="w-4/5 p-0  bg-[#fdf6f0] m-auto max-mobile:w-11/12 max-mobile:p-8">
           <div className="grid grid-cols-2 max-mobile:grid-cols-1">
             <div>
@@ -36,35 +118,68 @@ export default function Page() {
                 <Image src={Logo} alt="logo" />
               </div>
 
+              <ul className="text-center">
+                <li className="text-xl mb-1">Toxina Botulínica</li>
+                <li className="text-xl mb-1">Bioestimulador de colágeno</li>
+                <li className="text-xl mb-1">Preenchimento Labial</li>
+                <li className="text-xl mb-1">Tratamentos Corporais</li>
+                <li className="text-xl mb-1">Tratamentos faciais</li>
+                <li className="text-xl mb-1">Muito mais</li>
+              </ul>
+
+              <button
+                onClick={() => {
+                  setOpen(false);
+                }}
+                className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl max-w-[80%]"
+              >
+                Formulário
+              </button>
+
               {/* <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12"> */}
-              <Form />
+
               {/* </section> */}
             </div>
           </div>
         </section>
 
         <section className="w-4/5 py-4 px-8 bg-[#fdf6f0] m-auto max-mobile:w-11/12 min-mobile:p-2">
-          <h2 className="text-3xl font-semibold text-[#FB9494] mb-4 mt-20 max-mobile:mt-0 max-mobile:text-xl">
+          <h2 className="text-3xl font-semibold text-[#ad6159] mb-4 mt-20 max-mobile:mt-0 max-mobile:text-xl">
             RECUPERE SUA AUTOESTIMA SEM A NECESSIDADE DE PROCEDIMENTOS EXTREMOS
           </h2>
 
           <p className="">
-            A Bruna Telemberg busca proporcionar experiências únicas e oferecer
-            serviços de excelência aos nossos clientes e parceiro.
+            Você está cansada de gastar seu dinheiro em clínicas de estética que
+            prometem resultados incríveis, mas deixam você insatisfeita? Não se
+            preocupe mais! Nós entendemos o seu medo de investir tempo e
+            dinheiro em tratamentos que não funcionam. Aqui na nossa clínica,
+            garantimos resultados que vão superar todas as suas expectativas.
           </p>
 
-          <p className="">
-            Prestando serviços de qualidade com o grande intuito de ressaltar
-            com leveza a beleza e promover hábitos saudáveis.
+          <p className="mt-2">
+            Sabemos como é importante sentir-se confiante e satisfeita com a sua
+            aparência. É por isso que trabalhamos com os melhores profissionais
+            e utilizamos as técnicas mais avançadas para oferecer resultados
+            excepcionais. Nossa equipe altamente qualificada irá personalizar
+            cada tratamento conforme as suas necessidades e desejos, garantindo
+            que você obtenha os resultados que sempre sonhou.
+          </p>
+
+          <p className="mt-2">
+            Venha nos visitar e descubra o poder de uma experiência estética
+            verdadeiramente transformadora. Acreditamos que você merece
+            resultados excepcionais, e é exatamente isso que entregamos. Agende
+            sua consulta hoje mesmo e dê o primeiro passo para a confiança e
+            felicidade que você merece.
           </p>
         </section>
 
         <section className="grid grid-cols-3 gap-x-7 w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:grid-cols-1 max-mobile:w-11/12 max-mobile:gap-y-7">
           <div>
             <div>
-              <Image src={Corpo} alt="hidratação" />
+              <Image src={Facial} alt="Peling de diamante" />
             </div>
-            <h3 className="text-[#FB9494] text-2xl font-semibold mt-4 mb-2">
+            <h3 className="text-[#ad6159] text-2xl font-semibold mt-4 mb-2">
               Hidratação
             </h3>
             <p>
@@ -77,9 +192,9 @@ export default function Page() {
 
           <div>
             <div>
-              <Image src={Facial} alt="Peling de diamante" />
+              <Image src={Corpo} alt="hidratação" />
             </div>
-            <h3 className="text-[#FB9494] text-2xl font-semibold mt-4 mb-2">
+            <h3 className="text-[#ad6159] text-2xl font-semibold mt-4 mb-2">
               Corporal
             </h3>
             <p>
@@ -93,7 +208,7 @@ export default function Page() {
             <div>
               <Image src={Outro} alt="Limpeza de pele" />
             </div>
-            <h3 className="text-[#FB9494] text-2xl font-semibold mt-4 mb-2">
+            <h3 className="text-[#ad6159] text-2xl font-semibold mt-4 mb-2">
               Outros
             </h3>
             <p>
@@ -105,18 +220,15 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12">
-          <h3 className="text-[#FB9494] text-2xl font-semibold mt-4 mb-2 max-mobile:mt-2">
-            Importante!
-          </h3>
-
-          <ul>
-            <li>
-              — Alguns dos procedimentos necessitam de várias sessões para
-              alcançar os resultados desejados.
-            </li>
-            <li>— Mais informações serão passadas antes do procedimento.</li>
-          </ul>
+        <section className="w-4/5 p-8 flex items-center justify-center  bg-[#fdf6f0] m-auto max-mobile:w-11/12">
+          <button
+            onClick={() => {
+              setOpen(false);
+            }}
+            className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl"
+          >
+            Formulário
+          </button>
         </section>
 
         <section className="grid grid-cols-2 gap-x-10 w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:grid-cols-1 max-mobile:w-11/12">
@@ -144,11 +256,20 @@ export default function Page() {
               aplicação das melhores técnicas e procedimentos estéticos, sem
               exageros, com naturalidade, harmonia e segurança.
             </p>
+
+            <button
+              onClick={() => {
+                setOpen(false);
+              }}
+              className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl mt-6"
+            >
+              Formulário
+            </button>
           </div>
         </section>
 
         <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12">
-          <h3 className="text-[#FB9494] text-2xl font-semibold mt-4 mb-2">
+          <h3 className="text-[#ad6159] text-2xl font-semibold mt-4 mb-2">
             COMENTÁRIO DE QUEM CONHECE
           </h3>
 
@@ -166,8 +287,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-
-        {/* <Zap /> */}
       </main>
     </>
   );
