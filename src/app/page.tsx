@@ -23,19 +23,21 @@ import slide5 from "./../img/slide/e18a28c8-2beb-4035-b2f3-5fbb17ac5778.jpg";
 import axios from "axios";
 import { FormEvent, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
+import Link from "next/link";
 
 export default function Form() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(true);
+  const [politica, setPolitica] = useState(true);
 
   async function HandleForm(e: FormEvent) {
     e.preventDefault();
 
     const data = {
-      // emailTo: ["ezeque_2008@Hotmail.com", "sellbruna@hotmail.com"],
-      emailTo: "ezeque2008@gmail.com",
+      emailTo: ["ezeque2008@gmail.com", "sellbruna@hotmail.com"],
+      // emailTo: "ezeque2008@gmail.com",
       title: "Formulário",
       name,
       phone,
@@ -55,7 +57,7 @@ export default function Form() {
       <title>Estética - Bruna</title>
 
       <div
-        className={`h-screen w-full fixed  left-0 top-0 flex justify-center items-center backdrop-blur-sm ${
+        className={`h-screen w-full fixed  left-0 top-0 flex justify-center items-center backdrop-blur-sm z-50 ${
           open && "hidden"
         }`}
       >
@@ -86,6 +88,7 @@ export default function Form() {
               onChange={(e) => {
                 setPhone(e.target.value);
               }}
+              required
               className="mb-6 border border-[#ad6159] p-2"
             />
             <textarea
@@ -288,6 +291,22 @@ export default function Form() {
           </div>
         </section>
       </main>
+
+      <div className={`fixed w-[90%] ml-[5%] bottom-10 bg-[#FDF6F0] flex justify-between p-4 rounded-lg ${!politica && "hidden"}` }>
+        <p>
+          Ao permanecer nesta página, você estará de acordo com nossos{" "}
+          <Link href="/politica-de-privacidade">termos de uso</Link>
+        </p>
+
+        <button
+          onClick={() => {
+            setPolitica(false);
+          }}
+          className="w-full bg-[#ad6159] py-2 rounded-md text-white text-base font-medium max-w-[200px] mobile:max-w-[100%] mobile:mt-4"
+        >
+          Aceitar
+        </button>
+      </div>
     </>
   );
 }
