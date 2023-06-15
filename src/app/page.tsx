@@ -104,7 +104,7 @@ export default function Form() {
             />
 
             <div>
-              <input type="checkbox" required className="mr-2 mt-4"/>
+              <input type="checkbox" required className="mr-2 mt-4" />
               <label>
                 Eu aceito fornecer meus dados e concordo com a{" "}
                 <Link href="/politica-de-privacidade">
@@ -118,7 +118,7 @@ export default function Form() {
               type="submit"
               className="w-full bg-[#ad6159] text-white py-3 mt-4 rounded-sm "
             >
-              ENVIAR
+              Agendar sua avaliação
             </button>
           </form>
         </div>
@@ -151,7 +151,7 @@ export default function Form() {
                 }}
                 className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl max-w-[80%] mobile:max-w-[100%] mobile:mt-4"
               >
-                Formulário
+                Agendar sua avaliação
               </button>
 
               {/* <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12"> */}
@@ -245,7 +245,7 @@ export default function Form() {
             }}
             className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl"
           >
-            Formulário
+            Agendar sua avaliação
           </button>
         </section>
 
@@ -281,7 +281,7 @@ export default function Form() {
               }}
               className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl mt-6"
             >
-              Formulário
+              Agendar sua avaliação
             </button>
           </div>
         </section>
