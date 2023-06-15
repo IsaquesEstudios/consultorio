@@ -69,6 +69,10 @@ export default function Form() {
               setOpen(true);
             }}
           />
+
+          <h2 className="text-center mb-4 text-3xl text-[#ad6159]">
+            Agende sua avaliação
+          </h2>
           <form
             className="flex flex-col w-[400px] mobile:w-[280px]"
             onSubmit={HandleForm}
@@ -99,9 +103,20 @@ export default function Form() {
               className="h-20 border border-[#ad6159] p-2"
             />
 
+            <div>
+              <input type="checkbox" required className="mr-2 mt-4"/>
+              <label>
+                Eu aceito fornecer meus dados e concordo com a{" "}
+                <Link href="/politica-de-privacidade">
+                  política de privacidade
+                </Link>{" "}
+                deste site
+              </label>
+            </div>
+
             <button
               type="submit"
-              className="w-full bg-[#ad6159] text-white py-3 mt-8 rounded-sm "
+              className="w-full bg-[#ad6159] text-white py-3 mt-4 rounded-sm "
             >
               ENVIAR
             </button>
@@ -292,7 +307,11 @@ export default function Form() {
         </section>
       </main>
 
-      <div className={`fixed w-[90%] ml-[5%] bottom-10 bg-[#FDF6F0] flex justify-between p-4 rounded-lg ${!politica && "hidden"}` }>
+      <div
+        className={`fixed w-[90%] ml-[5%] bottom-10 bg-[#ffffff] flex justify-between p-4 rounded-lg border-[1px] border-[#ad6159] ${
+          !politica && "hidden"
+        }`}
+      >
         <p>
           Ao permanecer nesta página, você estará de acordo com nossos{" "}
           <Link href="/politica-de-privacidade">termos de uso</Link>
