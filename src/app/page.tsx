@@ -324,7 +324,9 @@ export default function Form() {
         >
           Aceitar
         </button>
+
       </div>
+        <Zap />
     </>
   );
 }

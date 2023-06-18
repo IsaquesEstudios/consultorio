@@ -8,7 +8,7 @@ export default function Zap() {
     <div id="zap" className="fixed right-2 bottom-2">
       <Link
         id="zap"
-        href="https://api.whatsapp.com/send?phone=554884795876&text=Ol%C3%A1!%20Vi%20seu%20an%C3%BAncio%20no%20Google%20e%20estou%20interessado(a)%20em%20fazer%20alguns%20procedimentos.%20Voc%C3%AA%20pode%20me%20atender"
+        href="https://wa.me/554884795876?text=V%C3%AD+seu+an%C3%BAncio+no+Google+e+preciso+tirar+algumas+d%C3%BAvidas+sobre+procedimentos+est%C3%A9ticos.+Voc%C3%AA+pode+me+ajudar%3F"
       >
         <Image id="zap" src={Whts} alt="whatsapp" height={80} width={80} />
       </Link>
