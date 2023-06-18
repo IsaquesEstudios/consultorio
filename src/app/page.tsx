@@ -5,7 +5,7 @@ import Est from "./../img/estética.jpeg";
 
 import { ImWhatsapp } from "react-icons/im";
 import { AiOutlineGoogle } from "react-icons/ai";
-import { FaWpforms } from "react-icons/fa";
+import { FaWhatsapp, FaWpforms } from "react-icons/fa";
 
 import Corpo from "./../img/Corporal.jpg";
 import Facial from "./../img/Facial.jpg";
@@ -145,18 +145,15 @@ export default function Form() {
                 <li className="text-xl mb-1">Muito mais</li>
               </ul>
 
-              <button
-                onClick={() => {
-                  setOpen(false);
-                }}
-                className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl max-w-[80%] mobile:max-w-[100%] mobile:mt-4"
+              <Link
+                className="max-w-[350px] w-full"
+                href="https://wa.me/554884795876?text=V%C3%AD+seu+an%C3%BAncio+no+Google+e+preciso+tirar+algumas+d%C3%BAvidas+sobre+procedimentos+est%C3%A9ticos.+Voc%C3%AA+pode+me+ajudar%3F"
               >
-                Agendar sua avaliação
-              </button>
-
-              {/* <section className=" w-4/5 p-8  bg-[#fdf6f0] m-auto max-mobile:w-11/12"> */}
-
-              {/* </section> */}
+                <button className="w-full bg-[#25D366] py-4 rounded-md text-white mobile:text-[16px] font-medium text-xl mt-6 flex items-center justify-center">
+                  <FaWhatsapp className="mr-2" />
+                  Agendar sua avaliação
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -239,14 +236,15 @@ export default function Form() {
         </section>
 
         <section className="w-4/5 p-8 flex items-center justify-center  bg-[#fdf6f0] m-auto mobile:w-11/12 mobile:px-4 mobile:py-8">
-          <button
-            onClick={() => {
-              setOpen(false);
-            }}
-            className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl"
+          <Link
+            className="max-w-[350px] w-full"
+            href="https://wa.me/554884795876?text=V%C3%AD+seu+an%C3%BAncio+no+Google+e+preciso+tirar+algumas+d%C3%BAvidas+sobre+procedimentos+est%C3%A9ticos.+Voc%C3%AA+pode+me+ajudar%3F"
           >
-            Agendar sua avaliação
-          </button>
+            <button className="w-full bg-[#25D366] py-4 rounded-md text-white font-medium text-xl mt-6 mobile:text-[16px] flex items-center justify-center">
+              <FaWhatsapp className="mr-2" />
+              Agendar sua avaliação
+            </button>
+          </Link>
         </section>
 
         <section className="grid grid-cols-2 gap-x-10 w-4/5 p-8  bg-[#fdf6f0] m-auto mobile:grid-cols-1 mobile:w-11/12 mobile:px-4 mobile:py-8">
@@ -275,14 +273,15 @@ export default function Form() {
               exageros, com naturalidade, harmonia e segurança.
             </p>
 
-            <button
-              onClick={() => {
-                setOpen(false);
-              }}
-              className="w-full bg-[#ad6159] py-4 rounded-md text-white font-medium text-xl mt-6"
+            <Link
+              className="max-w-[350px] w-full"
+              href="https://wa.me/554884795876?text=V%C3%AD+seu+an%C3%BAncio+no+Google+e+preciso+tirar+algumas+d%C3%BAvidas+sobre+procedimentos+est%C3%A9ticos.+Voc%C3%AA+pode+me+ajudar%3F"
             >
-              Agendar sua avaliação
-            </button>
+           <button className="w-full bg-[#25D366] py-4 rounded-md text-white font-medium text-xl mt-6 flex items-center justify-center mobile:text-[16px]">
+              <FaWhatsapp className="mr-2"/> 
+                Agendar sua avaliação
+              </button>
+            </Link>
           </div>
         </section>
 
